@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "backend/lib/servlet-api.jar"
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
+}

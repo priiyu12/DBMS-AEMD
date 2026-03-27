@@ -1,0 +1,6 @@
+com/aemd/backend/TableNames.class
+com/aemd/backend/CRUDOperations.class
+com/aemd/backend/ApiServer.class
+com/aemd/backend/DatabaseConnection.class
+com/aemd/backend/QueryOperations.class
+com/aemd/backend/QueryOperations$TableResult.class

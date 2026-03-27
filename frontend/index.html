@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AEMD — Art Exhibition Management Database</title>
+
+  <!-- Google Font + DataTables + jQuery -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Splash / Login -->
+  <div id="splash">
+    <div class="splash-card">
+      <h1 class="brand">AEMD</h1>
+      <p class="subtitle">Art Exhibition Management Database</p>
+
+      <div class="login-area">
+        <input id="username-input" type="text" placeholder="Enter your name" maxlength="50" autocomplete="off" />
+        <button id="login-btn" class="btn-primary">Login</button>
+      </div>
+
+      <p class="hint">Let's manage the Art - Exhibition.</p>
+    </div>
+  </div>
+
+  <!-- Main app -->
+  <div id="app" class="hidden">
+    <header class="app-header">
+      <div class="brand-left">
+        <h2>AEMD</h2>
+        <p>Art Exhibition Management Database</p>
+      </div>
+      <div class="user-area">
+        <div id="user-greeting">Hello, Guest</div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="panel tables-panel">
+        <h3>View Tables</h3>
+        <div class="grid-btns" id="table-buttons">
+          <!-- buttons are created in HTML for convenience -->
+          <button onclick="loadTable('user')">User</button>
+          <button onclick="loadTable('artwork')">Artwork</button>
+          <button onclick="loadTable('award')">Award</button>
+          <button onclick="loadTable('evaluation')">Evaluation</button>
+          <button onclick="loadTable('exhibition')">Exhibition</button>
+          <button onclick="loadTable('judge')">Judge</button>
+          <button onclick="loadTable('notification')">Notification</button>
+          <button onclick="loadTable('organizer')">Organizer</button>
+          <button onclick="loadTable('portfolio')">Portfolio</button>
+          <button onclick="loadTable('portfolioartwork')">PortfolioArtwork</button>
+          <button onclick="loadTable('student')">Student</button>
+          <button onclick="loadTable('submission')">Submission</button>
+          <button onclick="loadTable('userdetails')">UserDetails</button>
+          <button onclick="loadTable('venue')">Venue</button>
+          <button onclick="loadTable('visitor')">Visitor</button>
+          <button onclick="loadTable('appa')">APPA</button>
+        </div>
+
+        <div id="table-container" class="table-container"></div>
+      </section>
+
+      <section class="panel crud-panel">
+        <h3>Basic Operations</h3>
+        <div class="crud-row">
+          <button class="create-btn" onclick="showForm('create')">CREATE (Visitor)</button>
+          <button class="update-btn" onclick="showForm('update')">UPDATE (Notification)</button>
+          <button class="delete-btn" onclick="showForm('delete')">DELETE (Notification)</button>
+          <button class="insert-btn" onclick="showForm('insert')">INSERT (Artwork)</button>
+        </div>
+
+        <div id="form-container" class="form-container hidden"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

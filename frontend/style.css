@@ -1,0 +1,145 @@
+:root{
+  --bg1: linear-gradient(135deg,#0ea5e9 0%, #1e3a8a 100%);
+  --card: rgba(255,255,255,0.98);
+  --muted: #6b7280;
+  --accent: #0ea5e9;
+  --success: #10b981;
+  --danger: #ef4444;
+  --glass: rgba(255,255,255,0.08);
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg1);color:#0f172a}
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Splash */
+#splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: var(--bg1);
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-card{
+  width:760px;max-width:96%;background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.92));
+  border-radius:16px;padding:36px 48px;box-shadow:0 20px 40px rgba(2,6,23,0.3);text-align:center;
+  transform:translateY(20px);animation:enter 700ms cubic-bezier(.2,.9,.22,1) both;
+}
+@keyframes enter{from{opacity:0;transform:translateY(40px) scale(.99)} to{opacity:1;transform:translateY(0) scale(1)}}
+
+.brand{font-size:52px;margin:0 0 6px;color:var(--accent);letter-spacing:1px;font-weight:800}
+.subtitle{margin:0 0 22px;color:var(--muted);font-weight:500}
+
+/* login input */
+.login-area{display:flex;gap:12px;justify-content:center;align-items:center;margin:18px 0}
+.login-area input{
+  width:360px;max-width:60%;padding:12px 18px;border-radius:999px;border:1px solid rgba(7,11,21,0.04);
+  font-size:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)
+}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#2563eb);color:white;padding:10px 18px;border-radius:999px;border:none;cursor:pointer;font-weight:600}
+.hint{color:var(--muted);font-size:13px}
+
+/* App header */
+.app-header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:rgba(255,255,255,0.06);backdrop-filter:blur(6px);color:#fff}
+.brand-left h2{margin:0;color:#fff}
+.brand-left p{margin:0;color:rgba(255,255,255,0.8);font-size:13px}
+.user-area{font-weight:600;color:#fff}
+
+/* Main layout */
+.container{display:grid;grid-template-columns:1fr 420px;gap:20px;padding:28px;max-width:1200px;margin:18px auto}
+@media (max-width:980px){ .container{grid-template-columns:1fr;padding:16px} .crud-panel{order:2} .tables-panel{order:1} }
+
+/* panels */
+.panel{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.12)}
+.panel h3{margin:0 0 12px;color:#0f172a}
+
+/* grid buttons */
+.grid-btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.grid-btns button{padding:10px;border-radius:8px;border:none;background:#eef2ff;color:#1e293b;cursor:pointer;font-weight:600;box-shadow:0 4px 12px rgba(2,6,23,0.04)}
+.grid-btns button:hover{transform:translateY(-3px);transition:all 140ms ease}
+
+/* table container */
+.table-container{margin-top:14px;min-height:120px}
+#dataTable_wrapper{width:100%}
+.dataTables_wrapper .dataTables_paginate .paginate_button{background:var(--accent);color:#fff;border-radius:6px;padding:6px 10px}
+
+/* crud row */
+.crud-row{display:flex;gap:10px;flex-wrap:wrap}
+.crud-row button{padding:10px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+.create-btn{background:var(--success);color:#fff}
+.update-btn{background:#f59e0b;color:#fff}
+.delete-btn{background:var(--danger);color:#fff}
+.insert-btn{background:#06b6d4;color:#fff}
+
+/* form container */
+.form-container{margin-top:12px}
+.form-container input, .form-container select, .form-container textarea{
+  width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #e6eef7;font-size:15px
+}
+.form-container button{margin-right:8px;padding:10px 12px;border-radius:8px;border:none;cursor:pointer}
+
+/* small */
+small.muted{color:var(--muted);font-size:13px}
+
+/* .table-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.table-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #0f172a;
+} */
+
+/* Use Times New Roman for table outputs and make font smaller */
+table.display, table.dataTable, .dataTables_wrapper {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px; /* reduced size for compact view */
+}
+
+/* make table header slightly smaller/stronger */
+table.display thead th {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* smaller pagination/buttons text */
+.dataTables_wrapper .dataTables_paginate .paginate_button,
+.dataTables_wrapper .dataTables_length label,
+.dataTables_wrapper .dataTables_filter label {
+  font-size: 12px;
+}
+
+/* a bit tighter padding to show more columns */
+table.display td, table.display th {
+  padding: 6px 8px;
+}
+
+/* keep card visual consistent */
+.table-card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+}
